@@ -86,8 +86,8 @@ cd tetris
 ```bash
 cd backend
 
-# Install pip (only the first time)
-pip install -r requirements.txt
+# Install dependencies
+pip install flask flask-cors
 
 # Run the local server on http://localhost:5000
 python app.py
