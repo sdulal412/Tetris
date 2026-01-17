@@ -1,0 +1,72 @@
+<div class="app-wrapper">
+  <div class="game-container">
+    <div class="overlay" *ngIf="state?.game_over || state?.paused">
+      <h1>{{ state?.game_over ? 'GAME OVER' : 'PAUSED' }}</h1>
+      <button class="start-btn" (click)="state?.game_over ? api('reset') : api('pause')">
+        {{ state?.game_over ? 'RETRY' : 'RESUME' }}
+      </button>
+    </div>
+
+    <div class="sidebar">
+      <div class="box"><div class="box-title">NEXT</div>
+        <canvas #nextCanvas width="80" height="80"></canvas>
+      </div>
+      <div class="box"><div class="box-title">HOLD</div>
+        <canvas #holdCanvas width="80" height="80"></canvas>
+      </div>
+      <div class="box"><div class="box-title">BEST</div>
+        <span class="box-value">{{state?.hs || 0}}</span>
+      </div>
+      <div class="box"><div class="box-title">SCORE</div>
+        <span class="box-value">{{state?.score || 0}}</span>
+      </div>
+      <div class="box"><div class="box-title">LEVEL</div>
+        <span class="box-value">{{state?.level || 1}}</span>
+      </div>
+    </div>
+
+    <canvas #tetrisCanvas width="300" height="600" class="main-canvas"></canvas>
+
+    <div class="sidebar">
+      <button class="btn-pause" (click)="api('pause')">
+        [P] PAUSE
+      </button>
+      <button class="btn-restart" (click)="api('reset')">
+        [R] RESTART
+      </button>
+      <button class="btn-sound" (click)="toggleSound()" [class.active]="soundEnabled">
+        [S] SOUND: {{soundEnabled ? 'ON' : 'OFF'}}
+      </button>
+      <button class="btn-ghost" (click)="toggleGhost()" [class.active]="showGhost">
+        [G] GHOST: {{showGhost ? 'ON' : 'OFF'}}
+      </button>
+
+      <div class="controls-legend">
+        <div class="box-title">THEME</div>
+        <div class="control-row">
+          <span class="key">[D]</span>
+          <span class="label">DARK MODE</span>
+        </div>
+        <div class="control-row">
+          <span class="key">[L]</span>
+          <span class="label">LIGHT MODE</span></div>
+      </div>
+
+      <div class="controls-legend">
+        <div class="box-title">CONTROLS</div>
+        <div class="control-row">
+          <span class="key">←→</span>
+          <span class="label">MOVE</span>
+        </div>
+        <div class="control-row">
+          <span class="key">↑</span>
+          <span class="label">ROTATE</span>
+        </div>
+        <div class="control-row">
+          <span class="key">SPC</span>
+          <span class="label">DROP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
