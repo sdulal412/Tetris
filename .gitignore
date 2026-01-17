@@ -1,0 +1,13 @@
+# Node / Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/npm-debug.log*
+
+# Python
+backend/__pycache__/
+backend/*.py[cod]
+backend/venv/
+
+# System
+.DS_Store
