@@ -1,7 +1,7 @@
 <div align="center">
   <br />
     <a>
-      <img width="1531" height="707" alt="Tetris-photo" src="https://github.com/user-attachments/assets/79cd30d7-122c-48db-8d86-d3c6bc2ee6a8" />
+      <img width="1531" height="707" alt="Tetris-photo" src="tetris.png" />
     </a>
 
 
