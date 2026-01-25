@@ -67,8 +67,8 @@ tetris/
 │       ├── env/
 │            ├──env.ts
 │            └──env.dev.ts
-├── LICENSE
 ├── README.md
+├── tetris.png
 └── .gitignore
 
 ```
